@@ -1,7 +1,7 @@
 import java.net.*;
 import java.io.*;
 
-public class NyietInSengServer {
+public class Server {
     public static void main(String[] args) throws IOException {
 
         ServerSocket serverSocket = null;
@@ -24,13 +24,13 @@ public class NyietInSengServer {
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(clientSocket.getInputStream()));
         String inputLine, outputLine;
-        NyietInSengProtocol nis = new NyietInSengProtocol();
+        Protocol protocol = new Protocol();
 
-        outputLine = nis.processInput(null);
+        outputLine = protocol.processInput(null);
         out.println(outputLine);
 
         while ((inputLine = in.readLine()) != null) {
-             outputLine = nis.processInput(inputLine);
+             outputLine = protocol.processInput(inputLine);
              out.println(outputLine);
              if (outputLine.equals("Sayonara")) //sends end message to client
                 break;

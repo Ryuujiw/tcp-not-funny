@@ -1,7 +1,7 @@
 import java.net.*;
 import java.io.*;
 
-public class NyietInSengProtocol {
+public class Protocol {
     private static final int WAITING = 0;
     private static final int ACKNOWLEDGE = 1;
     private static final int HINT = 2;
@@ -23,7 +23,7 @@ public class NyietInSengProtocol {
         String output = null;
         
         if (state == WAITING) {
-            output = "NyietInSeng MatekAji Semar Ngiseng!";
+            output ="Waiting..";
             state = ACKNOWLEDGE;
         } else if (state == ACKNOWLEDGE) {
             if (input.equalsIgnoreCase("Siapa tu?")) {
