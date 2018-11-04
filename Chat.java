@@ -25,7 +25,11 @@ public class Chat {
         b1 = new JButton("Send");
         p1.add(b1, BorderLayout.EAST);
 
+        Border border = BorderFactory.createLineBorder(Color.BLACK);
+
         textArea = new JTextArea();
+        textArea.setBorder(border);
+        textArea.setEditable(false);
         p2.add(textArea, BorderLayout.CENTER);
         p2.add(p1, BorderLayout.SOUTH);
         
